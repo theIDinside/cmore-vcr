@@ -6,5 +6,5 @@
 suffix=".webm"
 
 for segment in $1/*.webm; do
-  ffmpeg -i $1/$segment ${segment/#$suffix}.mkv
+  ffmpeg -i $1/$segment -strict -2 ${segment/%$suffix}.mp4
 done
